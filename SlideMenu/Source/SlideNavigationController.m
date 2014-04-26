@@ -293,6 +293,11 @@ static SlideNavigationController *singletonInstance;
 	
 	self.leftMenu.view.frame = [self initialRectForMenu];
 	self.rightMenu.view.frame = [self initialRectForMenu];
+    
+    CGRect frame = self.rightMenu.view.frame;
+    frame.origin.x = MENU_DEFAULT_SLIDE_OFFSET;
+    frame.size.width -=MENU_DEFAULT_SLIDE_OFFSET;
+    self.rightMenu.view.frame = frame;
 }
 
 - (void)enableTapGestureToCloseMenu:(BOOL)enable
